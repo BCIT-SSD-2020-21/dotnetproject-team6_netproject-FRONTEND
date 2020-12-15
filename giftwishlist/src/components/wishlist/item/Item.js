@@ -14,30 +14,6 @@ const Item = (props) => {
         return formatter.format(price);
     }
 
-    const deleteItem = (wishlistId, itemId) => {
-        
-        console.log("deleteItm button clicked for" + itemId + "in wishlistId" + wishlistId);
-        fetch(BASE_URL + "wishlist/" + wishlistId + "/item/" + itemId, {
-            method: "DELETE",
-            headers: {
-              Accept: "application/json",
-              Authorization: `Bearer ${sessionStorage.getItem("bearer-token")}`,
-              "Content-Type": "application/json",
-            },
-          })
-            .then((res) => res.json())
-            // Data retrieved.
-            .then((data) => {
-              console.log(JSON.stringify(data));
-            //   fetchWishlists();
-            })
-            // Data not retrieved.
-            .catch((e) => {
-              console.log(e);
-            });
-            window.location.href="/wishlist/" + wishlistId;
-    }
-
     const toggleCompletedStatus = async (
             wishlistId,
             itemId,        
@@ -64,8 +40,8 @@ const Item = (props) => {
             // window.location.href="/wishlist/" + wishlistId;
     }
 
-    return (
-        <tr>
+  return (
+    <>
             <td>{itemData.name}</td>
             <td>{itemData.description}</td>
             <td><img src={itemData.imageURL} alt={itemData.name}></img></td>
@@ -76,12 +52,7 @@ const Item = (props) => {
                     {itemData.isComplete ? '✔' : '❌'}
                 </button>
             </td>
-            <td>
-                <button className="button" onClick={() => deleteItem(itemData.wishlistID, itemData.id)}>
-                    Delete
-                </button>
-            </td>
-        </tr>
+      </>
     )
 }
 

@@ -1,4 +1,4 @@
-const BASE = "https://giftwishlist1.azurewebsites.net/api/";
+const BASE = process.env.REACT_APP_BASE_URL + "api/";
 const BASE_URL = BASE + "wishlist";
 
 // const getById = async (id) => {
@@ -10,12 +10,11 @@ const BASE_URL = BASE + "wishlist";
 //   return data;
 // };
 
-const getById = async (id) => {
-  const response = await fetch(`${BASE_URL}/${id}`).catch((err) =>
+const getById = async (id, password) => {
+  const response = await fetch(`${BASE_URL}/${id}/?password=${password}`).catch((err) =>
     console.log(err)
   );
   const data = await response.json();
-
   return data;
 };
 
@@ -30,6 +29,7 @@ const createItem = async (
   const response = await fetch(`${BASE_URL}/${wishlistId}/item/`, {
     method: "POST",
     headers: {
+      Accept: "application/json",
       Authorization: `Bearer ${sessionStorage.getItem("bearer-token")}`,
       "Content-Type": "application/json",
     },

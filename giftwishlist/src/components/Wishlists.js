@@ -261,7 +261,7 @@ export default function Wishlists() {
                 <td>{wishlist.ownerId}</td>
                 <td>
                   <NavLink
-                    to={"/wishlist/" + wishlist.id}
+                    to={`/wishlist/${wishlist.id}/?password=${wishlist.password}`}
                     className="nav-link__wishlist"
                   >
                     {wishlist.name}
