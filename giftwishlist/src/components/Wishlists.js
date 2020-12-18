@@ -16,8 +16,8 @@ export default function Wishlists() {
 	// const [showInputs, setShowInputs] = useState(false);
 	// const [editNameInput, setEditNameInput] = useState('');
 	// const [editPasswordInput, setEditPasswordInput] = useState('');
-  // const [editDateInput, setEditDateInput] = useState('');
-  // eslint-disable-next-line
+	// const [editDateInput, setEditDateInput] = useState('');
+	// eslint-disable-next-line
 	const [wishlistActive, setWishlistActive] = useState(true);
 
 	const fetchUserWishlists = () => {
@@ -61,7 +61,8 @@ export default function Wishlists() {
 		setDueDate(e.target.value);
 	};
 
-	const createWishlist = () => {
+	const createWishlist = (e) => {
+		e.preventDefault();
 		fetch(BASE_URL + 'wishlist/', {
 			method: 'POST',
 			headers: {
@@ -76,8 +77,7 @@ export default function Wishlists() {
 			}),
 		})
 			// Response received.
-			.then((response) => {
-			})
+			.then((response) => {})
 			// Data retrieved.
 			.then((json) => {
 				setName('');
@@ -105,29 +105,35 @@ export default function Wishlists() {
 				id="createInputs"
 				className="dashboard__create animate__animated animate__fadeInDown"
 			>
-				<input
-					placeholder="Wishlist Name"
-					type="text"
-					value={name}
-					onChange={handleNameChange}
-					className="dashboard__create__input mx-1"
-				/>
-				<input
-					placeholder="Password (Optional)"
-					type="text"
-					value={password}
-					onChange={handlePasswordChange}
-					className="dashboard__create__input mx-1"
-				/>
-				<input
-					type="date"
-					value={dueDate}
-					onChange={handleDueDateChange}
-					className="dashboard__create__input mx-1"
-				/>
-				<button className="dashboard__create__button" onClick={createWishlist}>
-					Create Wishlist
-				</button>
+				<form className="dashboard__create__form">
+					<input
+						required
+						placeholder="Wishlist Name"
+						type="text"
+						value={name}
+						onChange={handleNameChange}
+						className="dashboard__create__form__input mx-1"
+					/>
+					<input
+						placeholder="Password (Optional)"
+						type="text"
+						value={password}
+						onChange={handlePasswordChange}
+						className="dashboard__create__form__input mx-1"
+					/>
+					<input
+						type="date"
+						value={dueDate}
+						onChange={handleDueDateChange}
+						className="dashboard__create__form__inputmx-1"
+					/>
+					<button
+						className="dashboard__create__form__button"
+						onClick={createWishlist}
+					>
+						Create Wishlist
+					</button>
+				</form>
 			</div>
 
 			{/* WishLists */}

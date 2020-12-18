@@ -1,0 +1,72 @@
+.login {
+	background: linear-gradient(
+		54deg,
+		rgba(247, 146, 208, 1) 0%,
+		rgba(165, 151, 189, 1) 22%,
+		rgba(165, 151, 189, 1) 25%,
+		rgba(36, 158, 160, 1) 100%
+	);
+	&__container {
+		&__title {
+			font-size: 64px;
+			color: white;
+			font-family: 'GloriaHallelujah-Regular';
+		}
+		&__form {
+			margin-top: 10%;
+			margin-bottom: 5%;
+
+			&__field {
+				&__control {
+					&__button {
+						border: none;
+						font-size: 22px;
+						color: white;
+						background: linear-gradient(
+							75deg,
+							rgba(168, 36, 219, 1) 0%,
+							rgba(121, 74, 177, 0.7) 30%,
+							rgba(72, 112, 133, 0.6) 60%,
+							rgba(23, 150, 89, 0.5) 90%
+						);
+						border-radius: 6%;
+						padding: 1%;
+						// height: 75px;
+						width: 20%;
+						background-color: $wb_green;
+						-webkit-transition: all 250ms ease-out;
+						-moz-transition: all 250ms ease-out;
+						-o-transition: all 250ms ease-out;
+						transition: all 250ms ease-out;
+						&:hover {
+							// border: 5px solid $wb_light_green;
+							outline-style: solid;
+							outline-color: $wb_light_green;
+							outline-width: thick;
+							background: linear-gradient(
+								75deg,
+								rgba(200, 46, 208, 1) 0%,
+								rgba(165, 151, 189, 0.7) 65%,
+								rgba(165, 151, 189, 0.6) 75%,
+								rgba(36, 158, 160, 0.5) 90%
+							);
+						}
+					}
+				}
+			}
+		}
+
+		&__register {
+			color: $wb_lightest_green;
+			font-size: 40px;
+			-webkit-transition: all 250ms ease-out;
+			-moz-transition: all 250ms ease-out;
+			-o-transition: all 250ms ease-out;
+			transition: all 250ms ease-out;
+			// text-decoration: none;
+			&:hover {
+				background-color: white;
+			}
+		}
+	}
+}

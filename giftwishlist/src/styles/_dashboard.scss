@@ -27,37 +27,40 @@
 	}
 
 	&__create {
-		display: flex;
-		flex-direction: column;
-		width: 75%;
 		margin: auto;
-		box-shadow: 8px 8px 8px grey;
-		@media screen and (min-width: $min-width-tablet) {
-			width: 90%;
-			display: grid;
-			grid-template-columns: 28% 28% 24% 20%;
-		}
-
-		&__input {
-			margin: 2%;
-			height: 40px;
-			text-align: center;
-			font-size: 18px;
-			border-radius: 7%;
-			border: none;
+		&__form {
+			display: flex;
+			flex-direction: column;
+			width: 75%;
+			margin: auto;
+			box-shadow: 8px 8px 8px grey;
 			@media screen and (min-width: $min-width-tablet) {
-				height: 80%;
-				margin: auto;
+				width: 90%;
+				display: grid;
+				grid-template-columns: 28% 28% 24% 20%;
 			}
-		}
-		&__button {
-			padding: 2%;
-			border-radius: 3%;
-			border: none;
-			margin: 2%;
-			font-size: 20px;
-			background-color: $wb_green;
-			color: white;
+
+			&__input {
+				margin: 2%;
+				height: 40px;
+				text-align: center;
+				font-size: 18px;
+				border-radius: 7%;
+				border: none;
+				@media screen and (min-width: $min-width-tablet) {
+					height: 80%;
+					margin: auto;
+				}
+			}
+			&__button {
+				padding: 2%;
+				border-radius: 3%;
+				border: none;
+				margin: 2%;
+				font-size: 20px;
+				background-color: $wb_green;
+				color: white;
+			}
 		}
 	}
 

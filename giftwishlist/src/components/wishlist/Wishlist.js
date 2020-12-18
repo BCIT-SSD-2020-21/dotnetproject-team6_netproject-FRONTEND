@@ -29,8 +29,8 @@ export default function Wishlist({ match }) {
 	};
 
 	useEffect(() => {
-	  fetchWishlists();
-      // eslint-disable-next-line
+		fetchWishlists();
+		// eslint-disable-next-line
 	}, []); // empty [] dependancy list to stop infinite loop
 
 	// Create Wishlist / Item
@@ -54,7 +54,8 @@ export default function Wishlist({ match }) {
 		setPrice(e.target.value);
 	};
 
-	const createItem = () => {
+	const createItem = (e) => {
+		e.preventDefault();
 		wishlistService
 			.createItem(name, description, image, purchaseLink, price, wishlistId)
 			.then((response) => {
@@ -212,53 +213,56 @@ export default function Wishlist({ match }) {
 			</div>
 			{userAuthenticated ? (
 				<div className="container has-text-centered wishlist-inputs">
-					<div className="container mt-4">
-						<div className="row">
-							<div className="mx-auto">
-								<input
-									placeholder="Item Name"
-									type="text"
-									value={name}
-									onChange={handleNameChange}
-									className="col-sm-12 col-lg-2 m-1"
-								/>
-								<input
-									placeholder="Description"
-									type="text"
-									value={description}
-									onChange={handleDescChange}
-									className="col-sm-12 col-lg-2 m-1"
-								/>
-								<input
-									placeholder="Image Link"
-									type="url"
-									value={image}
-									onChange={handleImageChange}
-									className="col-sm-12 col-lg-2 m-1"
-								/>
-								<input
-									placeholder="Purchase Link"
-									type="url"
-									value={purchaseLink}
-									onChange={handlePurchaseLinkChange}
-									className="col-sm-12 col-lg-2 m-1"
-								/>
-								<input
-									placeholder="Price"
-									type="text"
-									value={price}
-									onChange={handlePriceChange}
-									className="col-sm-12 col-lg-2 m-1"
-								/>
+					<form>
+						<div className="container mt-4">
+							<div className="row">
+								<div className="mx-auto">
+									<input
+										required
+										placeholder="Item Name"
+										type="text"
+										value={name}
+										onChange={handleNameChange}
+										className="col-sm-12 col-lg-2 m-1"
+									/>
+									<input
+										placeholder="Description"
+										type="text"
+										value={description}
+										onChange={handleDescChange}
+										className="col-sm-12 col-lg-2 m-1"
+									/>
+									<input
+										placeholder="Image Link"
+										type="url"
+										value={image}
+										onChange={handleImageChange}
+										className="col-sm-12 col-lg-2 m-1"
+									/>
+									<input
+										placeholder="Purchase Link"
+										type="url"
+										value={purchaseLink}
+										onChange={handlePurchaseLinkChange}
+										className="col-sm-12 col-lg-2 m-1"
+									/>
+									<input
+										placeholder="Price"
+										type="text"
+										value={price}
+										onChange={handlePriceChange}
+										className="col-sm-12 col-lg-2 m-1"
+									/>
+								</div>
 							</div>
 						</div>
-					</div>
-					<button
-						className="button is-success col-sm-12 col-lg-3 m-1"
-						onClick={createItem}
-					>
-						Add Item
-					</button>
+						<button
+							className="button is-success col-sm-12 col-lg-3 m-1"
+							onClick={createItem}
+						>
+							Add Item
+						</button>
+					</form>
 					<button
 						className="button is-danger col-sm-12 col-lg-3 m-1"
 						onClick={deleteWishlist}

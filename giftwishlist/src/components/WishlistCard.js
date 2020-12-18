@@ -95,6 +95,7 @@ export default class WishlistCard extends Component {
 				// window.location.href = "/wishlist/";
 				this.setState({ showInputs: false });
 				this.setState({ wishlistActive: false });
+				this.toggleConfirmDelete();
 			})
 			// Data not retrieved.
 			.catch((e) => {
@@ -138,7 +139,8 @@ export default class WishlistCard extends Component {
 					''
 				) : (
 					<div className="wishlists__card__count">
-						{this.props.wishlist.items.length + ' items'}
+						{this.props.wishlist.items.length}{' '}
+						{this.props.wishlist.items.length === 1 ? ' item' : ' items'}
 					</div>
 				)}
 				{/* Wishlist Password */}
@@ -157,7 +159,7 @@ export default class WishlistCard extends Component {
 							this.state.wishlist.password === '' ? 'password (optional)' : ''
 						}
 					/>
-				) : this.props.wishlist.password !== '' ? (
+				) : this.state.wishlist.password !== '' ? (
 					<p className="wishlists__card__password card-text">
 						Password: {this.state.wishlist.password}
 					</p>

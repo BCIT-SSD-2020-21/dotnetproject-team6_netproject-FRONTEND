@@ -1,40 +1,49 @@
 .footer {
+	width: 100%;
+	margin: 0;
+	padding: 0;
+
 	background: linear-gradient(
 		54deg,
 		rgba(247, 146, 208, 1) 0%,
 		rgba(165, 151, 189, 1) 22%,
 		rgba(165, 151, 189, 1) 25%,
 		rgba(36, 158, 160, 1) 100%
-
 	);
+
+	&__container {
+		&__column {
+			&__header {
+				color: $wb_dark_green;
+				font-weight: bold;
+			}
+			&__ul {
+				color: white;
+			}
+		}
+	}
+
+	#team_members {
+		a {
+			font-style: italic;
+			// font-weight: bold;
+			color: $wb_lightest_green;
+		}
+	}
+
 	.pt-4 {
-		background:#9adee9;
+		background: #9adee9;
 		color: white;
 		margin-bottom: 0;
-	  }
-	  .link-secondary {
+	}
+	.link-secondary {
 		color: white;
-	  }
-	  a {
+	}
+	a {
 		color: #053352;
-	  }
-	  .h5 {
+	}
+	.h5 {
 		font-weight: bold;
-		color:#053352
-	  } 
+		color: #053352;
+	}
 }
-
-
-  
-  
-  
-  
-  
-  
-
-  
-  
-  
-  
-  
-  

@@ -1,28 +1,93 @@
 .home {
-  &__jumbotron-custom {
-    background: rgb(247, 146, 208);
-    background: linear-gradient(
-      54deg,
-      rgba(247, 146, 208, 1) 0%,
-      rgba(165, 151, 189, 1) 22%,
-      rgba(165, 151, 189, 1) 25%,
-      rgba(36, 158, 160, 1) 100%
-    );
-    height: 600px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    color: white;
-  }
+	&__banner {
+		width: 100%;
+		margin: 0;
+		&__heading {
+			width: 100%;
 
-  &__overview-header {
-    font-weight: bold;
-    font-variant: small-caps;
-  }
+			position: relative;
+			&__icon {
+				opacity: 0.3;
+				margin: auto;
+				position: absolute;
+				top: 40;
+				left: 0;
+				bottom: 0;
+				right: 0;
+			}
+			&__text {
+				font-family: 'GloriaHallelujah-Regular';
+				font-size: 1em;
+				@media screen and (min-width: $min-width-tablet) {
+					font-size: 2em;
+				}
+			}
+		}
+		&__subheading {
+			font-family: 'GloriaHallelujah-Regular';
+			color: $wb_lightest_green;
+		}
+		&__center {
+			&__link {
+				&__button {
+					border: none;
+					font-size: 22px;
+					color: white;
+					background: linear-gradient(
+						75deg,
+						rgba(168, 36, 219, 1) 0%,
+						rgba(121, 74, 177, 0.7) 30%,
+						rgba(72, 112, 133, 0.6) 60%,
+						rgba(23, 150, 89, 0.5) 90%
+					);
+					border-radius: 6%;
+					padding: 2%;
+					height: 75px;
+					width: 125%;
+					background-color: $wb_green;
+					-webkit-transition: all 250ms ease-out;
+					-moz-transition: all 250ms ease-out;
+					-o-transition: all 250ms ease-out;
+					transition: all 250ms ease-out;
+					&:hover {
+						// border: 5px solid $wb_light_green;
+						outline-style: solid;
+						outline-color: $wb_light_green;
+						outline-width: thick;
+						background: linear-gradient(
+							75deg,
+							rgba(200, 46, 208, 1) 0%,
+							rgba(165, 151, 189, 0.7) 65%,
+							rgba(165, 151, 189, 0.6) 75%,
+							rgba(36, 158, 160, 0.5) 90%
+						);
+					}
+				}
+			}
+		}
+		background: rgb(247, 146, 208);
+		background: linear-gradient(
+			54deg,
+			rgba(247, 146, 208, 1) 0%,
+			rgba(165, 151, 189, 1) 22%,
+			rgba(165, 151, 189, 1) 25%,
+			rgba(36, 158, 160, 1) 100%
+		);
+		height: 600px;
+		display: flex;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		color: white;
+	}
 
-  &__overview-subheader {
-    color: rgb(100, 100, 100);
-    font-size: 0.8rem;
-  }
+	&__overview-header {
+		font-weight: bold;
+		font-variant: small-caps;
+	}
+
+	&__overview-subheader {
+		color: rgb(100, 100, 100);
+		font-size: 0.8rem;
+	}
 }
