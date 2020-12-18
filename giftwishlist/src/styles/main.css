@@ -307,7 +307,13 @@ body {
   width: 100%;
   margin: 0;
   padding: 0;
+  height: 60vh;
   background: linear-gradient(54deg, #f792d0 0%, #a597bd 22%, #a597bd 25%, #249ea0 100%);
+}
+
+.footer__container {
+  width: 90%;
+  margin: auto;
 }
 
 .footer__container__column__header {
@@ -346,6 +352,7 @@ body {
 .error {
   font-size: 32px;
   color: yellow;
+  padding-top: 5%;
 }
 
 .login {
@@ -416,7 +423,7 @@ body {
   background: linear-gradient(75deg, #a824db 0%, rgba(121, 74, 177, 0.7) 30%, rgba(72, 112, 133, 0.6) 60%, rgba(23, 150, 89, 0.5) 90%);
   border-radius: 6%;
   padding: 1%;
-  width: 20%;
+  width: 38%;
   background-color: #179659;
   -webkit-transition: all 250ms ease-out;
   transition: all 250ms ease-out;
@@ -789,6 +796,10 @@ body {
 
 .wishlist-notification {
   margin-top: 1em;
+}
+
+.wishlist {
+  padding-bottom: 5%;
 }
 
 .wishlist__return {
