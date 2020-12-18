@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 export default class Footer extends Component {
 	render() {
 		return (
-			<footer className="footer pt-4 my-md-5 mb-0 pb-0 pt-md-5">
+			<footer className="footer pt-4 mb-0 pb-0">
 				<div className="footer__container row">
 					<div className="footer__container__column col-6 col-md px-0">
 						<h6 className="footer__container__column__header">WISHBUCKET</h6>

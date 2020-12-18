@@ -2,6 +2,7 @@
 	width: 100%;
 	margin: 0;
 	padding: 0;
+	height: 60vh;
 
 	background: linear-gradient(
 		54deg,
@@ -12,6 +13,8 @@
 	);
 
 	&__container {
+		width: 90%;
+		margin: auto;
 		&__column {
 			&__header {
 				color: $wb_dark_green;
