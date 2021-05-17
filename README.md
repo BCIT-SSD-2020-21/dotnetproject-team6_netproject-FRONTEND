@@ -1,5 +1,3 @@
-# dotnetproject-team6_netproject-FRONTEND
-
 # WishBucket
 
 Wishbucket is live at:
@@ -8,7 +6,7 @@ https://wishbucket.netlify.app/
 
 Front-End Project associated with WishBucket Back-End Project:  
 
-https://github.com/BCIT-SSD-2020-21/dotnetproject-team6_netproject
+https://github.com/fatmabadri/WishBucket-Backend
 
 ## Setup Guide
 All the requirements are located in package.json and can be installed with `npm install`. This is a standard react app that can be run with `npm start`
